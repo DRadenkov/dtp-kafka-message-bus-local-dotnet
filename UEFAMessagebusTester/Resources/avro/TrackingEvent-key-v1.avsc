@@ -1,0 +1,11 @@
+{
+  "type": "record",
+  "name": "TrackingEventKey",
+  "namespace": "com.uefa.avro.keys.fdf.trackingevent",
+  "fields": [
+    {
+      "name": "MatchId",
+      "type": "int"
+    }
+  ]
+}

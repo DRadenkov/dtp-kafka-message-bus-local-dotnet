@@ -1,0 +1,225 @@
+{
+  "type": "record",
+  "name": "MatchEvent",
+  "namespace": "com.uefa.avro.values.fdf.matchevent",
+  "doc": "This is the avro schema for the FDF MatchEvent",
+  "fields": [
+    {
+      "name": "Operation",
+      "type": {
+        "type": "enum",
+        "name": "Operation",
+        "symbols": [
+          "Add",
+          "Update",
+          "Delete"
+        ]
+      },
+      "doc": "Mandtory string value: Add, Update or Delete"
+    },
+    {
+      "name": "EventId",
+      "type": "int",
+      "doc": "Mandatory unique id integer referencing the event"
+    },
+    {
+      "name": "MatchId",
+      "type": "int",
+      "doc": "Mandatory unique id integer referencing the match"
+    },
+    {
+      "name": "PhaseId",
+      "type": {
+        "type": "enum",
+        "name": "Phase",
+        "symbols": [
+          "a1",
+          "a2"
+        ]
+      },
+      "doc": "Mandatory unique id integer referencing the match phase when the event occurs"
+    },
+    {
+      "name": "Type",
+      "type": {
+        "type": "enum",
+        "name": "Type",
+        "symbols": [
+          "Goal",
+          "Assist",
+          "YellowCard",
+          "RedCard",
+          "Substitution",
+          "Penalty",
+          "StartTime",
+          "EndTime",
+          "PauseTime",
+          "ResumeTime",
+          "Suspension",
+          "EndMatch",
+          "Shot",
+          "BigChance",
+          "FreeKick",
+          "Offside",
+          "Corner",
+          "Save",
+          "Foul",
+          "TossCoin",
+          "Dribbling",
+          "Skill",
+          "Tackle",
+          "DroppedBall",
+          "ThrowIn",
+          "Clearance",
+          "AerialDuel",
+          "BallOut",
+          "Punch",
+          "Claim",
+          "TimeOut"
+        ]
+      },
+      "doc": "Mandatory enumerated value specifyng the kind of the event"
+    },
+    {
+      "name": "Attributes",
+      "type": {
+        "type": "array",
+        "items": {
+          "type": "enum",
+          "name": "Attributes",
+          "symbols": [
+            "BreakTime",
+            "OwnGoal",
+            "Wrong",
+            "Blocked",
+            "OffTarget",
+            "OnBar",
+            "OnPost",
+            "OnTarget",
+            "Overhead",
+            "FreeKick",
+            "Direct",
+            "Indirect",
+            "CausingPenalty",
+            "Goalkeeper",
+            "Handball",
+            "Cross",
+            "Kickoff",
+            "Short",
+            "Medium",
+            "Long",
+            "GoalkeeperKick",
+            "Successful",
+            "Failed",
+            "Dangerous",
+            "OrganizedAttack",
+            "Left",
+            "Center",
+            "Right",
+            "Simulation",
+            "High",
+            "Low",
+            "Shot",
+            "BigChance",
+            "YellowCard",
+            "PenaltyShootOut",
+            "SecondPenalty"
+          ]
+        }
+      },
+      "doc": "Optional List of enumerated values describing the event",
+      "default": null
+    },
+    {
+      "name": "TeamFromId",
+      "type": "int",
+      "doc": "Optional unique id integer referencing the team doing the specific action",
+      "default": null
+    },
+    {
+      "name": "TeamToId",
+      "type": "int",
+      "doc": "Optional unique id integer referencing the team being subject to the specific action",
+      "default": null
+    },
+    {
+      "name": "PlayerFromId",
+      "type": "int",
+      "doc": "Optional unique id integer referencing the player doing the specific action.",
+      "default": null
+    },
+    {
+      "name": "PlayerToId",
+      "type": "int",
+      "doc": "Optional unique id integer referencing the player being subject to the specific action",
+      "default": null
+    },
+    {
+      "name": "TimeUTC",
+      "type": "string",
+      "doc": "Mandatory date of the event"
+    },
+    {
+      "name": "Minute",
+      "type": "int",
+      "doc": "Mandatory Integer containing the minute of the event"
+    },
+    {
+      "name": "Second",
+      "type": "int",
+      "doc": "Optional Integer containing the second of the event",
+      "default": null
+    },
+    {
+      "name": "InjuryMinute",
+      "type": "int",
+      "doc": "Optional Integer containing the injury minute of the event",
+      "default": null
+    },
+    {
+      "name": "PositionX",
+      "type": [
+        "null",
+        "float"
+      ],
+      "doc": "Optional X coordinate referred to the event position (decimal, with up to 6 digit after comma)",
+      "default": null
+    },
+    {
+      "name": "PositionY",
+      "type": [
+        "null",
+        "float"
+      ],
+      "doc": "Optional Y coordinate referred to the event position (decimal, with up to 6 digit after comma)",
+      "default": null
+    },
+    {
+      "name": "GoalGatePositionX",
+      "type": [
+        "null",
+        "float"
+      ],
+      "doc": "Optional X coordinate referred to the goal gate position (decimal, with up to 6 digit after comma)",
+      "default": null
+    },
+    {
+      "name": "GoalGatePositionY",
+      "type": [
+        "null",
+        "float"
+      ],
+      "doc": "Optional Y coordinate referred to the goal gate position (decimal, with up to 6 digit after comma)",
+      "default": null
+    },
+    {
+      "name": "GoalGatePositionZ",
+      "type": [
+        "null",
+        "float"
+      ],
+      "doc": "Optional Z coordinate referred to the goal gate position (decimal, with up to 6 digit after comma)",
+      "default": null
+    }
+  ]
+}

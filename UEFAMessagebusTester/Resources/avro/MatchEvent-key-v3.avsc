@@ -1,0 +1,11 @@
+{
+  "type": "record",
+  "name": "MatchEventKey",
+  "namespace": "com.uefa.avro.keys.fdf.matchevent",
+  "fields": [
+    {
+      "name": "MatchId",
+      "type": "int"
+    }
+  ]
+}

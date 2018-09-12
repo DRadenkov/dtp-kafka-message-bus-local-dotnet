@@ -1,0 +1,65 @@
+{
+  "type": "record",
+  "name": "TrackingEvent",
+  "namespace": "com.uefa.avro.values.fdf.trackingevent",
+  "doc": "This is the avro schema for the FDF TrackingEvent",
+  "fields": [
+    {
+      "name": "Time",
+      "type": "string",
+      "doc": "Mandatory date of the event"
+    },
+    {
+      "name": "Objects",
+      "type": {
+        "type": "array",
+        "items": {
+          "type": "record",
+          "name": "Object",
+          "fields": [
+            {
+              "name": "ID",
+              "type": [
+                "null",
+                "int"
+              ],
+              "doc": "Integer containing the id of the object, and null for the ball",
+              "default": null
+            },
+            {
+              "name": "Type",
+              "type": "int",
+              "doc": "Integer containing the id of the object type (3-ball, 2-referee,1-player)"
+            },
+            {
+              "name": "X",
+              "type": "float",
+              "doc": "X coordinate referred to the object position (decimal, with up to 6 digit after comma)"
+            },
+            {
+              "name": "Y",
+              "type": "float",
+              "doc": "Y coordinate referred to the object position (decimal, with up to 6 digit after comma)"
+            },
+            {
+              "name": "Z",
+              "type": "float",
+              "doc": "Z coordinate referred to the object position (decimal, with up to 6 digit after comma)"
+            },
+            {
+              "name": "TeamID",
+              "type": [
+                "null",
+                "int"
+              ],
+              "doc": "The id of the team, null if it's the ball, or referee",
+              "default": null
+            }
+          ]
+        }
+      },
+      "doc": "List all the objects",
+      "default": null
+    }
+  ]
+}
