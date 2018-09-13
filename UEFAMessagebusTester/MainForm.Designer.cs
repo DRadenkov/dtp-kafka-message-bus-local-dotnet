@@ -32,11 +32,13 @@
             this.HeaderLbl = new System.Windows.Forms.Label();
             this.UEFALogo = new System.Windows.Forms.PictureBox();
             this.groupBoxProducer = new System.Windows.Forms.GroupBox();
+            this.notSendLbl = new System.Windows.Forms.Label();
             this.sentNum = new System.Windows.Forms.Label();
             this.sentLbl = new System.Windows.Forms.Label();
             this.connectStatus = new System.Windows.Forms.PictureBox();
             this.sendButton = new System.Windows.Forms.Button();
             this.connectBtn = new System.Windows.Forms.Button();
+            this.notSentNum = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.UEFALogo)).BeginInit();
             this.groupBoxProducer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.connectStatus)).BeginInit();
@@ -64,6 +66,8 @@
             // 
             // groupBoxProducer
             // 
+            this.groupBoxProducer.Controls.Add(this.notSentNum);
+            this.groupBoxProducer.Controls.Add(this.notSendLbl);
             this.groupBoxProducer.Controls.Add(this.sentNum);
             this.groupBoxProducer.Controls.Add(this.sentLbl);
             this.groupBoxProducer.Controls.Add(this.connectStatus);
@@ -75,6 +79,16 @@
             this.groupBoxProducer.TabIndex = 2;
             this.groupBoxProducer.TabStop = false;
             this.groupBoxProducer.Text = "Avro Producer";
+            // 
+            // notSendLbl
+            // 
+            this.notSendLbl.AutoSize = true;
+            this.notSendLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.notSendLbl.Location = new System.Drawing.Point(20, 201);
+            this.notSendLbl.Name = "notSendLbl";
+            this.notSendLbl.Size = new System.Drawing.Size(68, 20);
+            this.notSendLbl.TabIndex = 5;
+            this.notSendLbl.Text = "Errors :";
             // 
             // sentNum
             // 
@@ -126,6 +140,15 @@
             this.connectBtn.UseVisualStyleBackColor = false;
             this.connectBtn.Click += new System.EventHandler(this.connectBtn_Click);
             // 
+            // notSentNum
+            // 
+            this.notSentNum.AutoSize = true;
+            this.notSentNum.Location = new System.Drawing.Point(87, 207);
+            this.notSentNum.Name = "notSentNum";
+            this.notSentNum.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.notSentNum.Size = new System.Drawing.Size(0, 13);
+            this.notSentNum.TabIndex = 6;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -156,6 +179,8 @@
         private System.Windows.Forms.PictureBox connectStatus;
         private System.Windows.Forms.Button sendButton;
         private System.Windows.Forms.Button connectBtn;
+        private System.Windows.Forms.Label notSendLbl;
+        private System.Windows.Forms.Label notSentNum;
     }
 }
 

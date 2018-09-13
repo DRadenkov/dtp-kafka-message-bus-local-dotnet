@@ -4,7 +4,7 @@ using Confluent.Kafka;
 using Confluent.Kafka.Serialization;
 using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Threading.Tasks;
 using Type = com.uefa.avro.values.fdf.matchevent.Type;
 
 namespace UEFAMessagebusTester.Kafka
@@ -17,7 +17,8 @@ namespace UEFAMessagebusTester.Kafka
 
         private Producer<MatchEventKey, MatchEvent> producer = null;
 
-        public void init() {
+        public void init()
+        {
             try
             {
 
@@ -44,21 +45,23 @@ namespace UEFAMessagebusTester.Kafka
                 };
 
                 producer = new Producer<MatchEventKey, MatchEvent>(producerConfig, new AvroSerializer<MatchEventKey>(), new AvroSerializer<MatchEvent>());
-                
+
                 Console.WriteLine("Producer builded!");
             }
-            catch (Exception e) {
-                Console.WriteLine("Error while creating producer" , e);
+            catch (Exception e)
+            {
+                Console.WriteLine("Error while creating producer", e);
             }
-            
-           
+
+
         }
 
-        public bool isNullProducer() {
+        public bool isNullProducer()
+        {
             return producer == null;
         }
 
-        public Boolean sendMessage(MainForm form)
+        public Boolean sendMessage()
         {
             try
             {
@@ -90,11 +93,19 @@ namespace UEFAMessagebusTester.Kafka
                 value.GoalGatePositionZ = 0.0f;
                 Console.WriteLine(value.ToString());
 
-
                 Message<MatchEventKey, MatchEvent> message = new Message<MatchEventKey, MatchEvent>();
                 message.Key = key;
                 message.Value = value;
-                producer.ProduceAsync(topicName, message);
+                Task<DeliveryReport<MatchEventKey, MatchEvent>> task = producer.ProduceAsync(topicName, message);
+
+                task.Wait();
+
+                if (task.IsCompleted)
+                {
+                    return true;
+                }
+
+
             }
             catch (Exception e)
             {
@@ -102,8 +113,8 @@ namespace UEFAMessagebusTester.Kafka
                 return false;
             }
 
-            return true;
+            return false;
         }
-        
+
     }
 }
