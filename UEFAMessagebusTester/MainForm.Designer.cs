@@ -32,13 +32,13 @@
             this.HeaderLbl = new System.Windows.Forms.Label();
             this.UEFALogo = new System.Windows.Forms.PictureBox();
             this.groupBoxProducer = new System.Windows.Forms.GroupBox();
+            this.notSentNum = new System.Windows.Forms.Label();
             this.notSendLbl = new System.Windows.Forms.Label();
             this.sentNum = new System.Windows.Forms.Label();
             this.sentLbl = new System.Windows.Forms.Label();
             this.connectStatus = new System.Windows.Forms.PictureBox();
             this.sendButton = new System.Windows.Forms.Button();
             this.connectBtn = new System.Windows.Forms.Button();
-            this.notSentNum = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.UEFALogo)).BeginInit();
             this.groupBoxProducer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.connectStatus)).BeginInit();
@@ -80,6 +80,19 @@
             this.groupBoxProducer.TabStop = false;
             this.groupBoxProducer.Text = "Avro Producer";
             // 
+            // notSentNum
+            // 
+            this.notSentNum.AutoSize = true;
+            this.notSentNum.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.notSentNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.notSentNum.ForeColor = System.Drawing.Color.Red;
+            this.notSentNum.Location = new System.Drawing.Point(87, 201);
+            this.notSentNum.Name = "notSentNum";
+            this.notSentNum.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.notSentNum.Size = new System.Drawing.Size(19, 20);
+            this.notSentNum.TabIndex = 6;
+            this.notSentNum.Text = "0";
+            // 
             // notSendLbl
             // 
             this.notSendLbl.AutoSize = true;
@@ -96,8 +109,9 @@
             this.sentNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sentNum.Location = new System.Drawing.Point(83, 160);
             this.sentNum.Name = "sentNum";
-            this.sentNum.Size = new System.Drawing.Size(0, 20);
+            this.sentNum.Size = new System.Drawing.Size(19, 20);
             this.sentNum.TabIndex = 4;
+            this.sentNum.Text = "0";
             // 
             // sentLbl
             // 
@@ -139,15 +153,6 @@
             this.connectBtn.Text = "Connect";
             this.connectBtn.UseVisualStyleBackColor = false;
             this.connectBtn.Click += new System.EventHandler(this.connectBtn_Click);
-            // 
-            // notSentNum
-            // 
-            this.notSentNum.AutoSize = true;
-            this.notSentNum.Location = new System.Drawing.Point(87, 207);
-            this.notSentNum.Name = "notSentNum";
-            this.notSentNum.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.notSentNum.Size = new System.Drawing.Size(0, 13);
-            this.notSentNum.TabIndex = 6;
             // 
             // MainForm
             // 
